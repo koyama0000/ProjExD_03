@@ -94,7 +94,9 @@ class Bird:
         if not (sum_mv[0] == 0 and sum_mv[1] == 0):
             self._img = self._imgs[tuple(sum_mv)]  # 押されたキーの合計値
         screen.blit(self._img, self._rct)
-
+    
+    def get_direction(self):
+        return 
 
 class Bomb:
     """
@@ -149,6 +151,9 @@ class Beam:
         """
         self._rct.move_ip(self._vx, self._vy)
         screen.blit(self._img, self._rct)
+
+    # def get_dirction(self):
+        
 
 
 def main():
