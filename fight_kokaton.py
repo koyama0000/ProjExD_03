@@ -152,7 +152,7 @@ class Beam:
         self._rct.move_ip(self._vx, self._vy)
         screen.blit(self._img, self._rct)
 
-    def get_dirction(self):
+    # def get_dirction(self):
         
 
 
