@@ -107,6 +107,25 @@ class Bomb:
         self._rct.move_ip(self._vx, self._vy)
         screen.blit(self._img, self._rct)
 
+class Beam:
+    """
+    ビームに関するクラス
+    """
+    def __init__(self, bird: Bird):
+        self._img = pg.transform.rotozoom(pg.image.load(f"ex03/fig/beam.png"), 0, 2.0) # 画像surface
+        self._rct = self._img.get_rect() # 画像surfaceに対応したrect
+        self._rct.left = bird._rct.right  # こうかとんの右側にビームの左側を合わせる
+        self._rct.centery = bird._rct.centery
+        self._vx, self._vy = +1, 0
+
+    def update(self, screen: pg.Surface):
+        """
+        ビームを速度self._vyに基づき移動させる
+        引数 screen：画面Surface
+        """
+        self._rct.move_ip(self._vx, self._vy)
+        screen.blit(self._img, self._rct)
+
 
 def main():
     pg.display.set_caption("たたかえ！こうかとん")
